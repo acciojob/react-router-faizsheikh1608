@@ -1,13 +1,33 @@
-
 import React from "react";
-import './../styles/App.css';
+import "./../styles/App.css";
+import Header from "./Header";
+import AboutUs from "./AboutUs";
+import Body from "./Body";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
-        {/* Do not remove the main div */}
+      <Header />
+      <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+    ],
+  },
+]);
+export default App;
