@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const About = () => {
+const Home = () => {
   return (
     <div>
       <ul>
@@ -13,10 +13,9 @@ const About = () => {
         </Link>
       </ul>
 
-      <h1>About</h1>
-      <p>This is a sample React Router program.</p>
+      <h1>Welcome to my website!</h1>
     </div>
   );
 };
 
-export default About;
+export default Home;

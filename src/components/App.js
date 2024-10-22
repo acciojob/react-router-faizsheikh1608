@@ -1,33 +1,20 @@
 import React from "react";
 import "./../styles/App.css";
-import Header from "./Header";
-import AboutUs from "./AboutUs";
-import Body from "./Body";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 
-export const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
-      {
-        path: "/about",
-        element: <AboutUs />,
-      },
-    ],
-  },
-]);
 export default App;
